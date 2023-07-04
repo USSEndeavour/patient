@@ -1,26 +1,42 @@
 package patient;
 
+// Interface for the class Person.
 interface HumanInterface {
+
+    // Sets identification number.
     public void setId(int identification);
+    // Gets identification number.
     public int getId();
 
+    // Sets name.
     public void setName(String name);
+    // Gets name.
     public String getName();
 
+    // Sets address.
     public void setAddr(String addr);
+    // Gets address.
     public String getAddr();
 
+    // Sets phone number.
     public void setPhoneNumber(String phoneNum);
+    // Gets phone number.
     public String getPhoneNumber();
 
+    // Represents the class Person.
     public String toString();
 }
 
+// Interface for the class Patient.
 interface CaseInterface extends HumanInterface {
+    // Sets medical card ID.
     public void setMedicalCardID(int medID);
+    // Gets medical card ID.
     public int getMedicalCardID();
 
+    // Sets diagnosis.
     public void setDiagnosis(DiagnosisEnum dgns);
+    // Gets diagnosis.
     public DiagnosisEnum getDiagnosis();
 }
 
@@ -95,6 +111,7 @@ class Person implements HumanInterface {
         return phoneNumber;
     }
 
+    @Override
     public String toString() {
         String str = "id: " + this.getId() + " name: " + this.getName() + " address: " +
                 this.getAddr() + " phoneNo: " + this.getPhoneNumber();

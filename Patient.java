@@ -10,7 +10,7 @@ class Patient extends Person implements CaseInterface {
         this.medicalCardID = medicalCardID;
         this.diagnosis = diagnosis;
     }
-    
+
     Patient(int id, String firstName, String middleName, String lastName,
             String address, String phoneNumber) {
         super(id, firstName, middleName, lastName, address, phoneNumber);
@@ -31,7 +31,8 @@ class Patient extends Person implements CaseInterface {
     public DiagnosisEnum getDiagnosis() {
         return diagnosis;
     }
-    
+
+    @Override
     public String toString() {
         String str = "\n id: " + this.getId() + "\n name: " + this.getName() + "\n address: " +
                 this.getAddr() + "\n phoneNo: " + this.getPhoneNumber() +

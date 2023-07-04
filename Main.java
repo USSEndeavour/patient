@@ -4,6 +4,8 @@ import java.io.*;
 
 class Main {
     public static void main(String[] args) throws IOException {
+
+        // Create 15 Patient objects.
         Patient p1 = new Patient(1, "Andrii", "Petrovych", "Petrenko", "1 Str, City1, Country1", "+234523455234", 6, DiagnosisEnum.FLU);
         Patient p2 = new Patient(2, "Ivan", "Ivanovych", "Ivanenko", "4 Str, City9, Country19", "+32452349879", 2, DiagnosisEnum.APPENDICITIS);
         Patient p3 = new Patient(3, "Petro", "Petrovych", "Andriyenko", "43 Str, City27, Country11", "+8768688768903", 4, DiagnosisEnum.OTITIS);
@@ -20,16 +22,22 @@ class Main {
         Patient p14 = new Patient(14, "Volodymyr", "Petrovych", "Goncharenko", "535 Str, City125, Country71", "+92857239549293", 20, DiagnosisEnum.ANGINA);
         Patient p15 = new Patient(15, "Nazarii", "Volodymyrovych", "Ostapchuk", "134 Str, City241, Country201", "+2852748592345", 16, DiagnosisEnum.HEALTHY);
 
+        // Create an array of patients.
         Patient[] pats = {p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15};
 
+        // Print all patients.
         System.out.println("\n\n --- All patients in the hospital --- : \n");
         for (Patient pt: pats)
             System.out.println(" -- " + pt.toString() + "\n");
 
+        // Create PatientsHandler object, initialize with pats array.
         PatientsHandler ph = new PatientsHandler(pats);
 
+        // Print all patients with the defined diagnosis.
         System.out.println("\n --- Patients with same diagnosis --- : \n");
         ph.getSameDiagnosisPatients(DiagnosisEnum.FLU);
+
+        // Print all patients with the medical card ID within the defined interval.
         System.out.println("\n --- Patients with medcardID within a given range --- : \n");
         ph.getMedicalCardIdRangePatients(5, 20);
     }
